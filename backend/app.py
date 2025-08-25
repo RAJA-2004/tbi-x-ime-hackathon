@@ -90,6 +90,11 @@ if os.getenv("CORS_ORIGINS"):
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
+    # Allow Render app subdomains like https://<app>-frontend.onrender.com
+    # FastAPI's CORSMiddleware does exact matching for allow_origins, so
+    # we enable a regex to match any onrender.com subdomain coming from
+    # the frontend service (this fixes OPTIONS preflight failures).
+    allow_origin_regex=r"https?://.*\.onrender\.com",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
