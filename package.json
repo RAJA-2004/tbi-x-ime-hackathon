@@ -1,0 +1,27 @@
+{
+  "name": "sof-event-extractor",
+  "version": "2.0.0",
+  "description": "AI-powered maritime document processing system for Statement of Facts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RAJA-2004/sof-event-extractor.git"
+  },
+  "scripts": {
+    "dev:backend": "cd backend && source venv/bin/activate && uvicorn app:app --reload",
+    "dev:frontend": "cd frontend && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "install:frontend": "cd frontend && npm install",
+    "setup": "chmod +x setup.sh && ./setup.sh"
+  },
+  "keywords": [
+    "maritime",
+    "document-processing",
+    "ai",
+    "fastapi",
+    "react",
+    "statement-of-facts"
+  ],
+  "author": "RAJA-2004",
+  "license": "MIT"
+}
